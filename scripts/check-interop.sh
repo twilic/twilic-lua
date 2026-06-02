@@ -7,7 +7,7 @@ ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 echo "[interop] Running Lua interop unit tests..."
 (
   cd "${ROOT_DIR}"
-  export LUA_PATH="src/?.lua;src/?/init.lua;;"
+  export LUA_PATH="src/?.lua;src/?/init.lua;${LUA_PATH:-;;}"
   busted spec/twilic/core/interop_fixtures_spec.lua
 )
 

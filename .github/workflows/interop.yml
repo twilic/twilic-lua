@@ -8,16 +8,22 @@ jobs:
   rust-interop:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout twilic-go
+      - name: Checkout twilic-lua
         uses: actions/checkout@v4
 
       - name: Checkout twilic-rust
         run: git clone --depth 1 https://github.com/twilic/twilic-rust.git ../twilic-rust
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
+      - name: Setup Lua
+        uses: leafo/gh-actions-lua@v10
         with:
-          go-version: "1.22.x"
+          luaVersion: "5.4"
+
+      - name: Setup Luarocks
+        uses: leafo/gh-actions-luarocks@v4
+
+      - name: Install busted
+        run: luarocks install busted
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
