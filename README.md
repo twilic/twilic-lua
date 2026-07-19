@@ -2,7 +2,7 @@
 
 Lua 5.4 implementation of the Twilic wire format and session-aware encoder/decoder.
 
-This module's default `Twilic.encode` / `Twilic.decode` API targets Twilic v2. Stateful protocol features use `new_twilic_codec()` and `new_session_encoder()`.
+This module's default `Twilic.encode` / `Twilic.decode` API targets Twilic v2 (v3 support pending). Stateful protocol features use `new_twilic_codec()` and `new_session_encoder()`.
 
 ## Project layout
 
